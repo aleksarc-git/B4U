@@ -1,0 +1,47 @@
+<h1>Listing profiles</h1>
+
+<!-- TASK 
+  To implement:
+  If user is admin, can see all the other profiles, otherwiser, show only user's own profile
+-->
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.firstName %></td>
+        <td><%= profile.lastName %></td>
+        <td><%= profile.address %></td>
+        <td><%= profile.phone %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+    <li> <%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+<% else %>
+    <li> <%= link_to('Login', new_user_session_path) %> </li>
+<% end %>
+
+<br>
+<% if current_user.admin? %>
+    <%= link_to 'New Profile', new_profile_path %>
+<% end %>
+
+<br>
+<%= link_to 'Home', root_path %>
+<% end %>

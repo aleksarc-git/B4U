@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bikes for you is a premium store for purchasing bikes and bike related accessories">
+  
+        
+
+        <link rel="stylesheet" type="text/css" href="/assets/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/assets/grid.css">
+        <!--link rel="stylesheet" type="text/css" href="/assets/ionicons.min.css"-->
+        <link rel="stylesheet" type="text/css" href="/assets/animate.css">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css">
+        <link rel="stylesheet" type="text/css" href="/assets/queries.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>B4U</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace');
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="row">
+        <img src="/assets/logo.png" alt="logo" class="logo">
+        <img src="/assets/logo1.png" alt="logo1" class="logo1">
+        
+        <div class="user_profile">
+            <% if user_signed_in? %>
+            <%= current_user.email %>
+            <% end %>
+        </div>
+        
+        <ul class="main-nav js--main-nav">
+          
+          <li><a href="/cart"> <i class="material-icons">shopping_cart</i></a></li>
+          <li><a href="/products">Shop</a></li>
+          <li><a href="users/sign_in">Login</a></li><!--TASK After login from here, send user back to home page-->
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#Testimonials">Testimonials</a></li>
+          <li><a href="#StoreLocator">Store Locator</a></li>
+          <li><a href="#features">Bikes for you</a></li>
+          
+        </ul>
+        <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+      </div>
+    </nav>
+    <div class="hero-text-box">
+      <h1>Before you <br>Life was meaningless...</h1>
+    </div>
+  </header>
+
+  <section class="section-features js--section-features" id="features">
+    <div class="row">
+      <h2>Bikes for You &mdash; Before you, life was meaningless</h2>
+      <p class="long-copy">
+        We strive to bring you the highest quality items in the cycling world! At an affordable price!
+      </p>
+    </div>
+    <div class="row js--wp-1">
+      <div class="col span-1-of-4 box">
+        <!--i class="ion-female icon-big"></i-->
+        <i class="material-icons" style="font-size:60px">local_florist</i>
+
+        <h3>WOMEN'S BIKES</h3>
+        <p class="justified">
+          Whether you're new to cycling, looking to get back into the saddle, or an experienced rider, our Women's Cycling Hub is here to help. We have plenty of guides to help beginners get started, as well as more detailed how-tos for those who are ready to get
+          stuck in.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <!--i class="ion-male icon-big"></i-->
+        <i class="material-icons" style="font-size:60px">directions_bike</i>
+        <h3>MEN'S BIKES</h3>
+        <p class="justified">
+          Find the men' s bike that's right for you. Whether you're cruising down city streets or taking on the roughest mountain terrain, choose an bicycle that matches your needs as a cyclist. Gain the right level of traction, comfort and feel on your course.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <!--i class="ion-lock-combination icon-big"></i-->
+        <i class="material-icons" style="font-size:60px">lock</i>
+        <h3>BIKE ACCESSORIES</h3>
+        <p class="justified">
+          You can never be short of the right accessories, that's why BIKES FOR YOU has such a huge range from bike baskets to bells and even sports nutrition to suit all your needs.
+        </p>
+      </div>
+      <div class="col span-1-of-4 box">
+        <!--i class="ion-settings icon-big"></i-->
+        <i class="material-icons" style="font-size:60px">settings</i>
+        <h3>SERVICING &amp; REPAIRS</h3>
+        <p class="justified">
+          Bikes are machines. Awesome machines. And they deserve proper care and attention. Regular servicing will help to keep them operating smoothly and reduce wear and tear. If you want to keep your bike in great condition it's a good idea to visit our shop
+          now.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section-bikes">
+    <ul class="bikes-showcase clearfix">
+      <li>
+        <a href="#">
+          <figure class="bike-photo">
+            <img src="/assets/menBike.jpg" alt="Men's bike">
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">
+          <figure class="bike-photo">
+            <img src="/assets/womenBike.JPG" alt="Women's bike">
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">
+          <figure class="bike-photo">
+            <img src="/assets/kidsBike.jpg" alt="Kids' bike">
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#" target="_blank">
+          <figure class="bike-photo">
+            <img src="/assets/acessoriesBike.jpeg" alt="Bike acessories">
+          </figure>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+
+  <section class="section-storelocator" id="StoreLocator">
+    <div class="row">
+      <h2>Store Locator</h2>
+    </div>
+    <div class="row">
+      <div id="map" style="width:500px;height:400px;background:yellow">
+        <script>
+          function myMap() {
+            var mapOptions = {
+              center: new google.maps.LatLng(53.349, -6.2603),
+              zoom: 10,
+              mapTypeId: google.maps.MapTypeId.HYBRID
+            }
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+          }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDE6y12c5moyFHygNTBHVyVyHYcKZ_HB4&callback=myMap">
+        </script>
+      </div>
+      <div class="col span-1-of-2">
+        <div class="works-step clearfix">
+          <!--div><i class="ion-ios-location"></i></div-->
+          <div><i class="material-icons" style="font-size:40px">place</i></div>
+
+          <p>Choose one of the several stores you can find B4U. Our bikes are available in the best bike sellers. Prepare to go home ciclyng!</p>
+        </div>
+        <div class="works-step clearfix">
+          <!--div><i class="ion-iphone"></i></div-->
+          <div><i class="material-icons" style="font-size:40px">phone_iphone</i></div>
+          <p>Download B4U App to easily find our products, and enjoy the discounts, tips and advantages of being a member in our community.</p>
+        </div>
+        <a href="https://apple.com" class="btn-app"><img src="assets/download-app.svg" alt="App Store Button"></a>
+        <a href="https://play.google.com/store" class="btn-app"><img src="assets/download-app-android.png" alt="Play Store Button"></a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-testimonials" id="Testimonials">
+    <div class="row">
+      <h2>We want to help you live a healthier life!</h2>
+    </div>
+    <div class="row">
+      <div class="col span-1-of-3">
+        <blockquote>
+          I love cycling and B4U has given me a perfect excuse to enjoy my weekends up on the mountains. I can deffenitly say my life is healthier now. Thanks guys!
+          <cite><img src="/assets/customer-1.jpg" alt="Customer 1 photo">Jonathan Summers</cite>
+        </blockquote>
+      </div>
+      <div class="col span-1-of-3">
+        <blockquote>
+          I commute to my work place and having the experts from B4U to service my bike is aewsome! I got a B4U myself to test, and now my whole family have their amazing bikes.
+          <cite><img src="/assets/customer-2.jpg" alt="Customer 2 photo">Catherine Mayor</cite>
+        </blockquote>
+      </div>
+      <div class="col span-1-of-3">
+        <blockquote>
+          Never had sucha a nice bike in my life, I'm an athlete and B4U is perfectly safe and light, it makes my training routine a lot better. I really recommend their products.
+          <cite><img src="/assets/customer-3.jpg" alt="Customer 3 photo">Brian Reilley</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-form" id="Contact">
+    <div class="row">
+
+      <h2>We're happy to hear from you</h2>
+
+      <div class="row">
+        <form method="post" action="#" class="contact-form">
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="name">Name</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="text" name="name" id="name" placeholder="Your name" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="email">Email</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="email" name="email" id="email" placeholder="Your email" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label for="find-us">How did you find us?</label>
+            </div>
+            <div class="col span-2-of-3">
+              <select name="find-us" id="find-us">
+                                <option value="friends" selected>Friends</option>
+                                <option value="search">Search engine</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>Newsletter?</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="checkbox" name="news" id="news" checked> Yes, please
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>Drop us a line</label>
+            </div>
+            <div class="col span-2-of-3">
+              <textarea name="message" placeholder="Your message"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3">
+              <label>&nbsp;</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="submit" value="Send it!">
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="row">
+      <div class="col span-3-of-5">
+        <ul class="social-links">
+          <!--li><a href="#"><i class="ion-social-facebook"></i></a></li-->
+          <li><a href="#"><i class="material-icons">group_add</i></a></li>
+          <!--li><a href="#"><i class="ion-social-twitter"></i></a></li-->
+          <li><a href="#"><i class="material-icons">person</i></a></li>
+          <!--li><a href="#"><i class="ion-social-googleplus"></i></a></li-->
+          <li><a href="#"><i class="material-icons">plus_one</i></a></li>
+          <!--li><a href="#"><i class="ion-social-instagram-outline"></i></a></li-->
+          <li><a href="#"><i class="material-icons">camera_alt</i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <p>
+        Copyright &copy; 2017 by B4U. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="resources/js/script.js"></script>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-61026110-2', 'auto');
+      ga('send', 'pageview'); -->
+
+  </script>
+
+</body>
+
+</html>
