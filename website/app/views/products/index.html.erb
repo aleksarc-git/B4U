@@ -11,6 +11,7 @@
 <table>
   <thead>
     <tr>
+      <th>Preview</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
@@ -23,6 +24,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= link_to (image_tag product.image, :style => "height:100px"), product %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td><%= product.price %></td>
