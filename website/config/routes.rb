@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
   
+  get '/homepage' => 'homepage#index'
+  
   resources :products
 
   # The priority is based upon order of creation: first created -> highest priority.
