@@ -1,27 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Bikes for you is a premium store for purchasing bikes and bike related accessories">
-  
-        
-
-        <link rel="stylesheet" type="text/css" href="/assets/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/assets/grid.css">
-        <!--link rel="stylesheet" type="text/css" href="/assets/ionicons.min.css"-->
-        <link rel="stylesheet" type="text/css" href="/assets/animate.css">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css">
-        <link rel="stylesheet" type="text/css" href="/assets/queries.css">
-        <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <title>B4U</title>
-        <style>
-          @import url('https://fonts.googleapis.com/css?family=Covered+By+Your+Grace');
-        </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-</head>
+<!--head is in application.html.erb from layout view-->
 
 <body>
   <header>
@@ -30,18 +10,19 @@
         <img src="/assets/logo.png" alt="logo" class="logo">
         <img src="/assets/logo1.png" alt="logo1" class="logo1">
         
-        <div class="user_profile">
+        <div class="user_session">
           <ul>
-              <% if user_signed_in? %>
-            <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-              <% end %>
             <li>
               <% if user_signed_in? %>
-              <%= current_user.email %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+              <% end %>
+            </li>
+            <li>
+              <% if user_signed_in? %>
+                <%= current_user.email %>
               <% end %>
             </li>
           </ul>
-            
         </div>
         
         <ul class="main-nav js--main-nav">

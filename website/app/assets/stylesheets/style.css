@@ -64,14 +64,6 @@ h1 {
     letter-spacing: 1px;
 }
 
-.devise{
-		margin-top: 0;
-    margin-bottom: 20px;
-    color: black;
-    font-size: 240%;
-    word-spacing: 4px;
-    letter-spacing: 1px;
-}
 
 h2 {
     font-size: 180%;
@@ -249,12 +241,14 @@ header {
     margin-top: 90px;
 }
 
-.user_profile {
+.user_session li {
 	
 	display: inline-block;
   float: right;
-  margin-left: 40px;	
-	margin-top: 40px;
+	list-style: none;
+	margin-left: 40px;
+	margin-right: 20px;
+	margin-top: 20px;
 }
 
 .main-nav li {
@@ -522,6 +516,15 @@ footer {
     background-color: #111;
     font-size: 80%;
     padding-bottom: 20px;
+}
+
+.bottom-links li{
+	
+	display: inline-block;
+  float: left;
+  margin-left: 40px;	
+	margin-top: 40px;
+	list-style: none;
 }
 
 .footer-nav {
