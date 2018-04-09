@@ -27,23 +27,19 @@
           </ul>
         </div>
 
+    
         <ul class="main-nav-1 js--main-nav">
           <li><a href="/cart"> <i class="material-icons">shopping_cart</i></a></li>
           <li><a href="/homepage">Home</a></li>
+          <li><a href="#user_login">Login Session</a></li>
         </ul>
       </div>
     </nav>
     <div class="hero-text-box">
       <h1>Login to get even more from B4U!</h1>
     </div>
-      <div class="mobile-nav-icon-1 js--main-nav">
-      <ul>
-        <li>
-          <a class="btn btn-full js--scroll-to-plans" href="#user_login">Login Session</a>
-        </li>
-      </ul>
-    </div>
   </header>
+
 
   <section class="section-features-sign_in js--section-features" id="user_login">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

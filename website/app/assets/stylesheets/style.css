@@ -184,7 +184,7 @@ a:active {
     border-bottom: 1px  transparent;
 }
 
-/* ----- BUTTONS -----  */
+/* ----- BUTTONS -----  
 .btn:link,
 .btn:visited,
 input[type=submit] {
@@ -232,9 +232,22 @@ input[type=submit]:active {
 .btn-ghost:active {
     border: 1px solid #cf6d17;
     color: #fff;
+} */
+
+.buynow :link,
+.buynow :visited, {
+	  position: absolute;
+    top: 61%;
+    left: 25%;
+    display: inline-block;
+
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 1s, border 1s, color 1s;
+    transition: background-color 1s, border 1s, color 1s;
 }
-
-
 /* ----------------------------------------------- */
 /* HEADER */
 /* ----------------------------------------------- */
@@ -498,7 +511,7 @@ header {
     height: 50px;
     width: auto;
     margin-right: 10px;
-}
+} 
 
 /* ----------------------------------------------- */
 /* TESTIMONIALS */
@@ -592,7 +605,7 @@ input[type=checkbox] {
 .search{
 	margin-left: 20px;
 	margin-right: 40px;
-}
+} 
 
 
 /* ----------------------------------------------- */
