@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404224955) do
+ActiveRecord::Schema.define(version: 20180407203250) do
 
   create_table "products", force: true do |t|
-    t.string   "image"
     t.string   "name"
     t.string   "description"
     t.float    "price"
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180404224955) do
     t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "profiles", force: true do |t|

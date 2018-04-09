@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
  
+  get 'cart/checkout'
+
+  get 'products/checkout'
+
+  get 'product/checkout'
+
   get 'cart/index'
 
   resources :profiles

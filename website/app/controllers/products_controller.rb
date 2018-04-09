@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search]).order("created_at ASC")
+    else
+      @products = Product.all.order("created_at ASC")
+    end
   end
 
   # GET /products/1
@@ -79,4 +84,4 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:image, :name, :description, :price, :quantity, :category)
     end
-end
+  end

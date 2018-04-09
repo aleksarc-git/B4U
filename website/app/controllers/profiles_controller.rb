@@ -7,6 +7,11 @@ class ProfilesController < ApplicationController
   def index
     @profiles = Profile.all
     respond_with(@profiles)
+    if params[:search]
+      @profiles = Profile.search(params[:search]).order("created_at ASC")
+    else
+      @profiles = Profile.all.order("created_at ASC")
+    end
   end
 
   def show

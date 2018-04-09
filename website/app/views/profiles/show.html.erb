@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<html>
+  <head></head>
+  <body>
+    <div class="title">
+       <h1>Showing Profile</h1>
+    </div>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @profile.firstName %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @profile.lastName %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @profile.phone %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+    <table class="users_table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Address</th>
+        <th>Phone</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @profile.firstName %></td>
+        <td><%= @profile.lastName %></td>
+        <td><%= @profile.address %></td>
+        <td><%= @profile.phone %></td>
+      </tr>
+      </tbody>
+    </table>
+  </body>
+  <div class="bottom-links">
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+    <%= link_to 'Back', profiles_path %> |
+    <%= link_to 'Home', root_path %> |
+    <%= link_to 'Shop', products_path %>
+  </div>
+</html>
