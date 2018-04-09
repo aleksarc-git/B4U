@@ -40,7 +40,7 @@
 
   </header>
 
-  <section class="section-features js--section-features" id="profiles">
+  <section class="col span-1-of-3 js--section-features" id="profiles">
     <div class="search">
       <%= form_tag(profiles_path, :method => "get", id: "search_form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Profile" %>

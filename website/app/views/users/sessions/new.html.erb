@@ -4,6 +4,7 @@
 <head></head>
 
 <body>
+
   <header>
     <nav>
       <div class="row">
@@ -41,13 +42,15 @@
   </header>
 
 
-  <section class="section-features-sign_in js--section-features" id="user_login">
+  <section class="col span-1-of-3 js--section-features" id="user_login">
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true %>
       </div>
-
+    
+    
       <div class="field">
         <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "off" %>
