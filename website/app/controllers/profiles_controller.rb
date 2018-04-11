@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   before_filter :authenticate_user!
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
@@ -46,15 +47,15 @@ class ProfilesController < ApplicationController
     respond_with(@profile)
   end
   
-  def signedinuserprofile
-    profile = Profile.find_by_user_id(current_user.id)
-     if profile.nil?
-       redirect_to "/profiles/new"
-     else
-       @profile = Profile.find_by_user_id(current_user.id)
-       redirect_to "/profiles/#{@profile.id}"
-    end
-  end
+#   def signedinuserprofile
+#     profile = Profile.find_by_user_id(current_user.id)
+#      if profile.nil?
+#        redirect_to "/profiles/new"
+#      else
+#        @profile = Profile.find_by_user_id(current_user.id)
+#        redirect_to "/profiles/#{@profile.id}"
+#      end
+#   end
   
   def ensure_admin
        unless current_user && current_user.admin?
@@ -70,4 +71,5 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:firstName, :lastName, :address, :phone, :user_id)
     end
+ 
 end

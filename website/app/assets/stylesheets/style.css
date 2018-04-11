@@ -95,6 +95,14 @@ h2:after {
 	color: black;
 }
 
+.title p {
+	margin-left: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 80%;
+	color: black;
+}
+
 /* ----- PARAGRAPHS ----- */
 .long-copy {
     line-height: 145%;
@@ -594,6 +602,11 @@ input[type=checkbox] {
 	margin-right: 40px;
 }
 
+.form_edit_product{
+	margin-left: 20px;
+	margin-right: 40px;
+}
+
 .search{
 	margin-left: 20px;
 	margin-right: 40px;
@@ -616,6 +629,7 @@ footer {
   float: left;
 	margin-top: 20px;
   margin-left: 10px;
+	margin-bottom: 30px;
 	list-style: none;
 }
 
