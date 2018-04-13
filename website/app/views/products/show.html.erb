@@ -27,10 +27,11 @@
    </table>
   </body>
   <div class="bottom-links">
+  <% if current_user && current_user.admin?%>
+     <%= link_to 'Edit', edit_product_path(@product) %> |
+    <% else %>
     <%= link_to 'Back', products_path %> |
     <%= link_to 'Home', root_path %>
-    <% if current_user.admin?%>
-       | <%= link_to 'Edit', edit_product_path(@product) %>
     <% end %>
   </div>
 </html>
